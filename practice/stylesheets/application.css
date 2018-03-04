@@ -2,3 +2,460 @@
 html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {	margin: 0;	padding: 0;	border: 0;	font-size: 100%;	font: inherit;	vertical-align: baseline;}/* HTML5 display-role reset for older browsers */article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {	display: block;}body {	line-height: 1;}ol, ul {	list-style: none;}blockquote, q {	quotes: none;}blockquote:before, blockquote:after,q:before, q:after {	content: '';	content: none;}table {	border-collapse: collapse;	border-spacing: 0;}
 
 /* ここにCSSを書いてデザインを入れよう */
+
+
+/* 全体 */
+
+body{
+  margin-left: 2%;
+  margin-right: 2%;
+  background-color: rgb(153,153,153);
+}
+
+h1,h2,h3,h4,h5,h6{
+  color: rgb(68,68,68);
+}
+
+a{
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container{
+  width: 980px;
+  margin: 0 auto;
+}
+/* header */
+
+header.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+
+/* ナビゲーション */
+.global-nav__items{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-content: center;
+  background: rgb(209,209,209);
+}
+
+.global-nav__item:nth-child(2),
+.global-nav__item:nth-child(4){
+  background-color: rgb(179,179,179);
+}
+
+
+.global-nav__item {
+  flex-grow: 1;
+  height: 25px;
+  font-size: 15px;
+  padding: 10px 10px;
+  text-align: center;
+}
+
+.global-nav__item a{
+  color: rgb(68,68,68);
+}
+
+
+/* bread-crumbs */
+.bread-crumbs__items{
+  display: flex;
+  flex-flow: row nowrap;
+  height: 2rem;
+  align-content: center;
+  background-color: rgb(98,98,98);
+  align-items: center;
+  padding-left: 30px;
+}
+
+
+.bread-crumbs__item a{
+  color:rgb(215,215,215);
+  font-size: 10px;
+}
+
+
+li.bread-crumbs__item:nth-child(2):before,
+li.bread-crumbs__item:nth-child(3):before{
+  content: '>';
+  color:rgb(123,123,123);
+  padding: 0 10px;
+}
+
+
+
+/* top-ads */
+.top-ads__items{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content:space-around;
+  background-color: rgb(204,204,204);
+}
+
+.top-ads__item{
+  text-align: center;
+  padding: 10px;
+}
+
+.top-ads__item img{
+  padding-top: 2%;
+  padding-bottom: 2%;
+
+}
+
+
+/* body */
+
+.body{
+  display: flex;
+  flex-flow: row-reverse;
+}
+
+.main{
+  width: 65%;
+  flex-grow: 1;
+  background-color: rgb(221,221,221);
+  line-height: 2em;
+}
+
+.main-header{
+  display: flex;
+  align-items: center;
+  background-color: rgb(238,238,238);
+  height: 4rem;
+  font-size: 2rem;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+h2.main-header__title:before{
+  content: "";
+  padding: 0 10px;
+  font-size: 20px;
+  margin-right: 20px;
+  background-color: rgb(153,153,153);
+  border-style: solid;
+  border-color: rgb(153,153,153) rgb(153,153,153) rgb(153,153,153) rgb(153,153,153);
+}
+
+.article{
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 10px;
+}
+
+
+.article__title{
+  font-size: 2em;
+  font-weight: bold;
+  padding: 5%;
+}
+
+.article__sub-title{
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin: 15px;
+}
+
+.article__sub-sub-title{
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 15px;
+}
+
+.article__unorder-list li {
+  color: rgb(102,102,102);
+  list-style: disc inside;
+  padding-left: 1rem;
+}
+.article__paragraph{
+  padding: 5px;
+  color: rgb(102,102,102);
+}
+
+.article__link{
+  color:rgb(134,156,222);
+  text-decoration: underline;
+}
+
+.article__blockquote{
+  color: rgb(102,102,102);
+}
+
+.article__blockquote :nth-child(1){
+  padding-left: 30px;
+}
+
+
+
+.article__order-list{
+  color: rgb(102,102,102);
+  list-style: decimal inside;
+  padding: 1rem 0 0 1rem;
+
+}
+/* 横の広告 */
+.aside{
+  background-color: rgb(102,102,102);
+  padding: 10px;
+}
+
+.aside-ads__item{
+  text-align: center;
+}
+img.aside-ads__image{
+  margin: 5px 0;
+}
+
+
+/* ローカルナビ */
+.local-nav__items{
+  margin-top: 30px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.local-nav__link{
+  display: block;
+  text-decoration: none;
+  padding-left: 25px;
+  margin-bottom: 3px;
+  color: rgb(240,240,240);
+  background-color: rgb(153,153,153);
+  height: 40px;
+}
+
+
+
+
+/* form */
+.form{
+  background-color: rgb(255,255,255);
+}
+
+.form__title{
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 30px;
+}
+
+.form-item{
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-content: flex-start space-between;
+  padding: 2% 5%;
+}
+/* .form-item__label{
+  right:10px;
+} */
+
+
+input, button, textarea, select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+
+input,
+textarea
+,select{
+  width: 65%;
+  border-color: rgb(219,219,219);
+  border-radius: 5px;
+}
+
+input[type="radio" i] {
+    -webkit-appearance: radio;
+}
+input[type="radio" i], input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+}
+
+
+
+textarea{
+  height: 10rem;
+}
+select{
+  background-color: rgb(238,238,238);
+  box-shadow:0  -1px 0 rgb(232,232,232);
+}
+
+option.form-item__select-list-option:nth-child(2),
+option.form-item__select-list-option:nth-child(3),
+option.form-item__select-list-option:nth-child(4),
+option.form-item__select-list-option:nth-child(5){
+  border-top: 0.1px solid rgb(215,215,215);
+}
+
+.form-item__inline-items{
+  width: 65%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.form-item__label{
+  width: 30%;
+  text-align: right;
+}
+.form-item__inline-item{
+  margin-right: 10px;
+  padding: 0.2rem;
+  width: 4rem;
+  text-align: center;
+  background-color: rgb(238,238,238);
+  border-radius: 5px;
+}
+
+a.footer-nav__link::before{
+  content: '>';
+}
+
+
+.form-item__radio,
+.form-item__checkbox{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-content: center;
+}
+
+.form-item__radio-input,
+.form-item__checkbox-input{
+  width: 0.5rem;
+}
+
+.form-item__file{
+  background-color: rgb(238,238,238);
+  border-radius: 5px;
+}
+
+.form-item__actions{
+  width: 65%;
+}
+.form-item__actions-items{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start space-around;
+}
+
+.form-item__actions-item{
+
+}
+
+input.form-item__action{
+ width: 10rem;
+ height: 2rem;
+}
+input.form-item__file{
+  font-size: 10%;
+}
+
+input.is-submit{
+  color:rgb(230,230,230);
+  background-color: rgb(68, 68, 68);
+  border-color: rgb(68, 68, 68);
+}
+input.is-reset{
+  color: rgb(78,78,78);
+  background-color: rgb(204,204,204);
+  border-color: rgb(204,204,204);
+}
+
+
+
+/* footer */
+
+
+.footer{
+  background-color: rgb(68,68,68);
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center space-around;
+}
+
+.footer-nav{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:space-around;
+  flex: 0 0 40%;
+}
+
+.footer-nav__item{
+  padding-bottom: 10px;
+}
+a.footer-nav__link{
+  color: rgb(207,207,207);
+}
+
+li.footer-nav_item:before{
+  counter: '>'
+}
+
+.about-author{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  background-color: rgb(204,204,204);
+  flex: 0 0 50%;
+  height: 17rem;
+  padding: 1%;
+  border-radius: 5px;
+}
+
+h2.about-author__title{
+  font-size: 1rem;
+  flex: 0 0 100%;
+  height: 3rem;
+}
+img.about-author__image{
+  border-radius: 50%;
+  flex: 0 0 5rem;
+  height: 5rem;
+}
+
+dl.about-author__descriptions{
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  flex: 0 0 75%;
+  line-height: 1.5rem;
+}
+
+dt.about-author__term{
+  flex: 0 0 30%;
+  text-align: right;
+  padding-right: 5%;
+}
+
+dd.about-author__description{
+  flex: 0 0 65%;
+}
+
+
+
+.footer-copyright{
+  display: block;
+  margin: auto;
+  color: rgb(207,207,207);
+  padding: 3rem 0;
+}
