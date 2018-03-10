@@ -43,10 +43,12 @@ header.header{
 
 /* ナビゲーション */
 .global-nav__items{
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-content: center;
+  display: -webkit-flex;
+display: flex;
+/* -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+/* align-items: center; /* 縦方向中央揃え */ */ */
+-webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
+justify-content: center; /* 横方向中央揃え */
   background: rgb(209,209,209);
 }
 
@@ -58,13 +60,17 @@ header.header{
 
 .global-nav__item {
   flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 25px;
   font-size: 15px;
   padding: 10px 10px;
   text-align: center;
 }
 
-.global-nav__item a{
+a.global-nav__link{
+  text-decoration: none;
   color: rgb(68,68,68);
 }
 
@@ -126,8 +132,9 @@ li.bread-crumbs__item:nth-child(3):before{
 .main{
   width: 65%;
   flex-grow: 1;
+  line-height: 2rem;
   background-color: rgb(221,221,221);
-  line-height: 2em;
+
 }
 
 .main-header{
@@ -140,15 +147,18 @@ li.bread-crumbs__item:nth-child(3):before{
   padding-left: 20px;
 }
 
-h2.main-header__title:before{
+
+
+.main-header__title:before{
   content: "";
-  padding: 0 10px;
-  font-size: 20px;
-  margin-right: 20px;
-  background-color: rgb(153,153,153);
+  display: inline-block;
+  margin-right: 10px;
   border-style: solid;
-  border-color: rgb(153,153,153) rgb(153,153,153) rgb(153,153,153) rgb(153,153,153);
+  border-width: 10px 10px;
+  position: relative;
+  border-color: rgb(110,110,110) rgb(68,68,68) ;
 }
+
 
 .article{
   display: flex;
@@ -158,22 +168,98 @@ h2.main-header__title:before{
 
 
 .article__title{
+  display: flex;
+  align-items: center;
   font-size: 2em;
   font-weight: bold;
-  padding: 5%;
+  padding: 2%;
 }
 
+
+.article__title::before{
+  content: "";
+  display: inline-block;
+  margin-right: 10px;
+  border-style: solid;
+  border-width: 20px 10px;
+  position: relative;
+  border-color: rgb(110,110,110) rgb(110,110,110) rgb(68,68,68) rgb(68,68,68);
+}
+
+.main-header:after{
+  content: "";
+  display: inline-block;
+  margin-right: 10px;
+  border-style: solid;
+  border-width: 20px 20px;
+  position: relative;
+  top: -1rem;
+  right: -346px;
+  border-color: rgb(204,204,204) rgb(204,204,204) rgb(169,169,169) rgb(169,169,169);
+}
+
+
+
 .article__sub-title{
+  display: flex;
+  justify-content: row;
+  align-items: center;
   font-size: 1.7rem;
   font-weight: bold;
   margin: 15px;
 }
 
+.article__sub-title:before{
+  content: "";
+  display: inline-block;
+  border-width: 10px 3px;
+  margin-right: 20px;
+  border-style: solid;
+  position: relative;
+  border-color: rgb(65,65,65) rgb(65,65,65) rgb(65,65,65) rgb(65,65,65);
+}
+
+.article__sub-title:after{
+  content: "";
+  display: inline-block;
+  border-width: 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgb(65,65,65);
+  position: relative;
+  right: 152px;
+}
+
 .article__sub-sub-title{
+  display: flex;
+  justify-content: row;
+  align-items: center;
   font-size: 1.5rem;
   font-weight: bold;
-  margin: 15px;
+  margin: 20px 15px 15px 15px;
 }
+
+.article__sub-sub-title::before{
+  content: "";
+  display: inline-block;
+  margin-right: 15px;
+  border-width: 7px 7px;
+  border-style: solid;
+  border-radius: 50%;
+  border-color:rgb(68,68,68);
+}
+
+.article__sub-sub-title::after{
+  content: "";
+  display: inline-block;
+  margin-right: 10px;
+  border-width: 7px 7px;
+  border-style: solid;
+  border-radius: 50%;
+  position: relative;
+  right: 115px;
+  border-color:rgb(153,153,153);
+}
+
 
 .article__unorder-list li {
   color: rgb(102,102,102);
@@ -195,10 +281,26 @@ h2.main-header__title:before{
 }
 
 .article__blockquote :nth-child(1){
-  padding-left: 30px;
+  margin: 30px 10px;
+  padding-left: 40px;
+  font-size: 9px;
+  border-left: 7px solid rgb(153,153,153);
 }
 
-
+.article__blockquote-paragraph:nth-child(1)::before{
+  content: "''";
+  color:rgb(241,241,241);
+  background-color: rgb(153,153,153);
+  display: block;
+  font-size: 40px;
+  border-style: solid;
+  border-radius: 50%;
+  width:10px;
+  border-width: 10px 10px;
+  position: relative;
+  left: -65px;
+  border-color:rgb(153,153,153) rgb(153,153,153) rgb(153,153,153) rgb(153,153,153) ;
+}
 
 .article__order-list{
   color: rgb(102,102,102);
