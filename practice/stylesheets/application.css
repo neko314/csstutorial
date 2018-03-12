@@ -24,9 +24,16 @@ img {
   max-width: 100%;
 }
 
+p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 1.5em;
+}
+
 .container{
   width: 980px;
   margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, .4) 0 0 8px;
 }
 /* header */
 
@@ -147,17 +154,36 @@ li.bread-crumbs__item:nth-child(3):before{
   padding-left: 20px;
 }
 
+.main-header__title{
+  width: 270px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 
 
 .main-header__title:before{
   content: "";
-  display: inline-block;
-  margin-right: 10px;
-  border-style: solid;
-  border-width: 10px 10px;
-  position: relative;
-  border-color: rgb(110,110,110) rgb(68,68,68) ;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(153,153,153);
+  border-bottom: solid rgb(14,14,14) 10px;
 }
+
+.main-header__title:after{
+  order: 1;
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(14,14,14);
+  border-bottom: solid rgb(153,153,153) 10px;
+  position: relative;
+  right: 250px;
+}
+
 
 
 .article{
@@ -178,12 +204,12 @@ li.bread-crumbs__item:nth-child(3):before{
 
 .article__title::before{
   content: "";
-  display: inline-block;
+  display: block;
+  width: 10px;
+  height: 20px;
+  background-color: rgb(153,153,153);
+  border-bottom: solid rgb(14,14,14) 20px;
   margin-right: 10px;
-  border-style: solid;
-  border-width: 20px 10px;
-  position: relative;
-  border-color: rgb(110,110,110) rgb(110,110,110) rgb(68,68,68) rgb(68,68,68);
 }
 
 .main-header:after{
@@ -283,35 +309,25 @@ li.bread-crumbs__item:nth-child(3):before{
 .article__blockquote :nth-child(1){
   margin: 15px 15px;
   padding-left: 30px;
-  font-size: 8px;
   border-left: 7px solid rgb(153,153,153);
 }
 
-.article__blockquote-paragraph:nth-child(1)::before{
-  content: "";
-  color:rgb(241,241,241);
-  background-color: rgb(153,153,153);
-  display: block;
-  font-size: 40px;
-  border-style: solid;
+.article__blockquote:before{
+  position: relative;
+  top: 22px;
+  right: 5px;
+  display: flex;
+  justify-content: center;
+  content: ' " ';
+  font-size: 68px;
+  font-family: serif;
+  color: #eee;
+  text-align: center;
+  line-height: 84px;
+  background-color: #999;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  width:10px;
-  border-width: 25px 20px;
-  position: relative;
-  left: -60px;
-  border-color:rgb(153,153,153) rgb(153,153,153) rgb(153,153,153) rgb(153,153,153) ;
-}
-
-
-.article__blockquote-paragraph:nth-child(1)::after{
-  content: "''";
-  display: inline;
-  color: rgb(240,240,240);
-  font-size: 50px;
-  font-weight: bold;
-  position: relative;
-  top: -250px;
-  right: 75px;
 }
 
 .article__order-list{
@@ -340,10 +356,19 @@ img.aside-ads__image{
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+  overflow-y: scroll;
+  height: 150px;
 }
 
+.local-nav__item{
+  width: 300px;
+  border-radius: 5px;
+}
+
+
 .local-nav__link{
-  display: block;
+  display: flex;
+  align-items: center;
   text-decoration: none;
   padding-left: 25px;
   margin-bottom: 3px;
@@ -402,38 +427,7 @@ h3.form__title::after{
   border-style: solid;
   border-color: rgb(255,255,255) transparent transparent transparent;
   border-width: 11px 15px;
-
 }
-/* h3.form__title::before{
-  content: " ";
-  display: inline-block;
-  width: 40px;
-  height: 25px;
-  margin-right: 5px;
-  position: relative;
-  border-style: solid;
-  border-width:2px 2px;
-  background-color: rgb(255,255,255);
-  border-color:rgb(14,14,14) rgb(14,14,14) rgb(14,14,14) rgb(14,14,14);;
-}
-
-h3.form__title::before,
-h3.form__title::after{
-  content: " ";
-  position: absolute;
-  right: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  margin: auto;
-}
-
-.form__title::before{
-  border-style: solid;
-  border-width:40px 40px;
-  border-color:rgb(14,14,14) transparent transparent transparent;
-  position: relative;
-} */
 
 
 
@@ -444,12 +438,9 @@ h3.form__title::after{
   align-content: flex-start space-between;
   padding: 2% 5%;
 }
-/* .form-item__label{
-  right:10px;
-} */
 
 
-input, button, textarea, select {
+ button, textarea, select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -464,30 +455,7 @@ textarea
   border-radius: 5px;
 }
 
-input[type="radio" i]{
-    -webkit-appearance: radio;
-    appearance: radio;
-    -webkit-transform: scale(2);
-    transform: scale(2);
-    cursor: default;
-    display: inline-block;
-    font-size: 2px;
-}
-input[type="radio" i]:checked{
-  content: "\f3a7";
-  color: #17bcdf;
-}
 
-
-input[type="checkbox" i]  {
-    -webkit-appearance: checkbox;
-    appearance: checkbox;
-    -webkit-transform: scale(2);
-    transform: scale(2);
-    background-color: initial;
-    cursor: default;
-    display: inline-block;
-}
 
 
 textarea{
